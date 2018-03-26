@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Jmol, see http://www.jmol.org">
+  <meta name ="author" content = "Vaishnavi Methuku">
+  <meta name ="keywords" content = "generated_by_Jmol_Webexport">
+  <title>Vaishnavi: BINF_630 - Assignment</title>
+  <style type="text/css">
+	body, html { height:100%; overflow:hidden; margin:0; padding:0; }
+	h1 { font-size:1.5em; text-align:center; }
+	.section { clear:both; padding:0.6em 0; }
+	#Text_Buttons { padding:0 1ex; }
+  #JSmol_loading_msg{
+      color:orange;
+  }
+  .JmolTextPane {
+		position:absolute; top:0; 
+		left:0;
+		width:65%;
+		height:100%;
+		overflow:auto;
+  }
+  .JmolPane {
+		position:absolute; top:0; 
+		left:65%;
+		width:35%;
+		height:100%;
+		overflow:hidden;
+  }
+  .JmolViewerPane{
+		width:99%;
+		height:85%;
+		overflow:hidden;
+  }
+  .JmolWidgetPane {
+		width:100%;
+		height:15%;
+		overflow:auto;
+		font-size:0.9em;
+  }
+  .JmolWidgetPane table { margin:0 auto; }
+  .JmolButtonDiv{
+      width:99%;
+      text-align:center;
+  }
+  .update-info {
+		clear:both;
+		padding-top:1em;
+		text-align:right;
+		font-size:0.75em;
+		font-style:italic;
+  }
+	.update-info + .update-info {
+		padding-top:0.2em;
+		margin-bottom:1em;
+	}
+	.widgetItemScBtn { /* each widget in a ScriptButton page goes in a table cell with this class */
+		text-align:center; padding:0.5ex;
+	}
+	.widgetItemAnim { /* AnimationWidget is taller than the others, put it to the right so everything fits better */
+		 float:right;margin:2px 5px;
+	}
+	.JmolColorPicker_vis { position:relative!important; } /*override, to allow scrolling to bottom of palette*/
+
+  </style>
+  <!-- Below is used locally but not on server. May generate warnings. -->
+  <script type="text/javascript" src="jsmol/JSmol.min.js"></script>
+  <script src="support.js" type="text/javascript"></script>
+  
+<script src="JmolColorPicker.js" type="text/javascript"></script>
+  
+  <!-- Below is used on server, but not locally. May generate warnings.-->
+  <script type="text/javascript" src="http://binf.gmu.edu/vmethuku/HW2/jsmol/JSmol.min.js"></script>
+  <script type="text/javascript">
+  var jmolApplet0 = "jmolApplet0"; //our viewer
+  var jmolInfo; //setup parameters
+  ;(function() {
+
+// Developers: The debugCode flag is checked in j2s/java/core.z.js, 
+// and, if TRUE, skips loading the core methods, forcing those
+// to be read from their individual directories. Set this
+// true if you want to do some code debugging by inserting
+// System.out.println, document.title, or alert commands
+// anywhere in the Java or Jmol code.
+
+var s = document.location.search;
+Jmol.debugCode = (s.indexOf("debugcode") >= 0);
+
+
+jmol_isReady = function(jmolApplet) {
+    elem = document.getElementById("JSmol_loading_msg");
+    elem.style.visibility="hidden";
+    elem.style.height="0";
+    elem.style.border="none";
+ }		
+
+
+jmolInfo = {
+	width: "100%",
+	height: "100%",
+	debug: false,
+	color: "white",
+	addSelectionOptions: false,
+	use: "HTML5",
+	coverImage: "1T1E.png",        // initial image instead of applet
+	coverScript: "",	// special script for click of cover image (otherwise equal to script)
+	deferApplet: false,                  // wait to load applet until click
+	deferUncover: true,                 // wait to uncover applet until script completed
+	//The paths below assume your server is set up with standard JSmol directory.  If not
+	//they will need modification for the page to work.
+	jarPath: "http://binf.gmu.edu/vmethuku/HW2/jsmol/java", //path to applet .jar files on server.
+	j2sPath: "http://binf.gmu.edu/vmethuku/HW2/jsmol/j2s",//path to javascript version.
+	serverURL: "http://binf.gmu.edu/vmethuku/HW2/jsmol/php/jsmol.php", //if your own server does not allow php, you can change to http://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php
+	makeLiveImg:"http://binf.gmu.edu/vmethuku/HW2/jsmol/j2s/img/play_make_live.jpg",//path to activate 3-D image.
+	jarFile: "JmolAppletSigned0.jar",
+	isSigned: true,
+	//disableJ2SLoadMonitor: true,
+	disableInitialConsole: true,
+	readyFunction: jmol_isReady,
+	//defaultModel: "ethylene/ethylene.xyz",
+	script: "load 1T1E.spt"
+}
+
+// ?_USE=JAVA   ?_USE=SIGNED   ?_USE=HTML5
+   if (s.indexOf("USE=") >= 0)
+     jmolInfo.use = s.split("USE=")[1].split("&")[0]
+   else if (s.indexOf("JAVA") >= 0)
+     jmolInfo.use = "JAVA"
+   else if (s.indexOf("IMAGE") >= 0)
+     jmolInfo.use = "IMAGE"
+   else if (s.indexOf("NOWEBGL") >= 0)
+     jmolInfo.use = "JAVA IMAGE"
+   else if (s.indexOf("WEBGL") >= 0)
+     jmolInfo.use = "WEBGL HTML5"
+   if (s.indexOf("NOWEBGL") >= 0)
+     jmolInfo.use = use.replace(/WEBGL/,"")
+   var useSignedApplet = (s.indexOf("SIGNED") >= 0);
+   if(useSignedApplet && jmolInfo.use == "HTML5") jmolInfo.use = "JAVA";
+
+   var protocol = window.location.protocol.toLowerCase();
+   if (protocol == "file:") { 
+    jmolInfo.jarPath = "jsmol/java";
+    jmolInfo.j2sPath = "jsmol/j2s";
+    jmolInfo.serverURL = "http://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php"; //you can change to your own path
+    jmolInfo.makeLiveImg = "jsmol/j2s/img/play_make_live.jpg";
+    jmolInfo.jarFile = "JmolAppletSigned.jar";
+    jmolInfo.isSigned= "true";
+  }
+})();
+
+$(document).ready(function(){
+    $("#Jmol").html(Jmol.getAppletHtml(jmolApplet0, jmolInfo));
+	function spinImage(){
+		Jmol.scriptWait(window['jmolApplet0'], 'spin on');
+	};
+	window.setTimeout(spinImage, 3000);
+});
+  </script>
+
+</head>
+<body>
+  <div class="JmolTextPane">
+    <div id="Text_Buttons">
+      <div id="JSmol_loading_msg">
+        Once the molecule file is fully loaded, the image at right will become live.  At that time the "activate 3-D" icon <img id="make_live_icon" src="" height="15px" /> will disappear.
+				<hr>
+      </div>
+      <h1>
+        Vaishnavi: BINF_630 - Assignment 
+      </h1>
+	  
+	  <h3>I. Predict secondary and three-dimensional structure for the selected sequence using an advanced secondary structure prediction algorithm and a homology modeling algorithm, respectively. (Protein - K8G1J4).</h3>
+			<p>		
+To predict the secondary and three-dimensional structure for the protein K8G1J4 using an advanced secondary structure prediction algorithm and a homology modeling algorithm protein sequence in FASTA format is required which is obtained through UniProt(<a href="http://www.uniprot.org/">http://www.uniprot.org/</a>). The protein ID is given and the sequence for the protein in FASTA format is retrieved (<a href="http://www.uniprot.org/uniprot/K8G1J4">http://www.uniprot.org/uniprot/K8G1J4</a>).</p>
+<img src="images/pic18.png"/>
+<br>
+<hr>
+<h4>The FASTA sequence is available at: </h4><a href="http://www.uniprot.org/uniprot/K8G1J4.fasta">http://www.uniprot.org/uniprot/K8G1J4.fasta</a>
+<p>
+>tr|K8G1J4|K8G1J4_9XANT Peptidase OS=Xanthomonas axonopodis pv. malvacearum str. GSPB2388 GN=WS7_05788 PE=4 SV=1
+MHTILADSERRPAPSTVEAGQPPQDERLRVLLAVRMPALNAAADALLQLQPNTLPVAFTR
+AEFSERFAAGAGDLQAVADFAASYGLRIEHAHADSGSVILEGTVQQCEAAFQVSLRDYID
+GAMRYRGRTGPVSIPQALGGIVTAVLGLDARPQAQTLPSAPEASASLPPAIQPTAPADSR
+DGPIMQYTPPQLAQLYGFPEHDGHGQCIGIIVLGGGYARDQMTAYFAQLRVPMPTLVDVL
+LPGATNAVSRGNADADVEAQMDIQIAGAIAPGAKLVMYFAPNTDNGFLEAINAAIHDAEH
+SPGIIAISWGFTESQWTPQSRQAYDCAFRAAALMGITVCIAAGDDGASDGQPGLNVCFPA
+SSPFVLACGGTRLQVTADSANEQAWASGGGGESRFFARPAWQNNLRLTDAQHQSRHLRMR
+GVPDVAANADAQTGYYLSINGQPAVMGGTSAAAPLWAALLARIYGANRMQPHFMLPRLYG
+HPEAFRDIVAGDNAGFRAATGWDANTGLGVPDGARLAEALRHN</p>
+<hr>
+<p>
+To predict the secondary structure Jpred 4: a protein secondary structure predictor (<a href="http://www.compbio.dundee.ac.uk/jpred/">http://www.compbio.dundee.ac.uk/jpred/</a>) is used by submitting the protein sequence in FASTA format and clicking on “Make Prediction” button. The results of the predictor are shown below where red color bonds represent the helices and the green represent beta sheets (<a href="http://www.compbio.dundee.ac.uk/jpred4/results/jp_NC1Pll4/jp_NC1Pll4.results.html">http://www.compbio.dundee.ac.uk/jpred4/results/jp_NC1Pll4/jp_NC1Pll4.results.html</a>).</p>
+<img src="images/pic1.png"/>
+<img src="images/pic2.png"/>
+<img src="images/pic19.png"/>
+<p>
+	The “View full results in HTML” link in the results gives the user a better view of the results (<a href="http://www.compbio.dundee.ac.uk/jpred4/results/jp_NC1Pll4/jp_NC1Pll4.html">http://www.compbio.dundee.ac.uk/jpred4/results/jp_NC1Pll4/jp_NC1Pll4.html</a>). The numbers in green at the bottom of the results in html represent the prediction accuracy. The numbers 7, 8 and 9 are more accurate and reliable than the others which means that higher the number more accurate is the prediction.
+</p>
+<img src="images/pic3.png"/>
+<img src="images/pic4.png"/>
+<img src="images/pic21.png"/>
+<p>
+The three-dimensional structure using advance homology modeling algorithms can be obtained using the Swiss-Model (<a href="https://swissmodel.expasy.org/interactive/">https://swissmodel.expasy.org/interactive/</a>) which provides different templates and models for the protein sequence that must be predicted. The FASTA format sequence retrieved from UniProt is uploaded and the “Search for Templates” button is clicked. The prediction of the swiss model resulted in 56 Templates and 1 Model for the protein sequence (<a href="https://swissmodel.expasy.org/interactive/rJFKVG/templates/">https://swissmodel.expasy.org/interactive/rJFKVG/templates/</a>). The protein can be chosen based on the “Coverage” and “Identity” from the predictions. The models with high coverage give more coils in the 3D structure and less sequence identity, so the protein “1t1e.1.A Kumamolisin” has high coverage when compared to the other results from the predictions (<a href="https://swissmodel.expasy.org/interactive/rJFKVG/models/">https://swissmodel.expasy.org/interactive/rJFKVG/models/</a>). The PDB format of the protein 1T1E is obtained from the Swiss-Model which is also the PDB ID of the protein (<a href="https://swissmodel.expasy.org/templates/1t1e.1.pdb">https://swissmodel.expasy.org/templates/1t1e.1.pdb</a>).
+</p>			
+<img src="images/pic5.png"/>
+<img src="images/pic6.png"/>
+<hr>
+
+		<div>
+      <div id="section_1T1E" class="section">
+
+
+  <div id="1T1E" class="JmolButtonDiv"> 
+	<font size="16" color="red">Click the button to reset the 3D structure of the protein (on the right side):</font>
+    <button onclick="Jmol.script(jmolApplet0,'load 1T1E.spt;'); updateScriptButtonWidgets(0);">1T1E</button>
+    <div id="jmolCntl0" style="visibility:hidden; display:none;">
+      <table><tbody><tr><td class="widgetItemScBtn"><input type="checkbox" id="JmolSpinWidget0" checked="true" onclick="Jmol.scriptWait(window['jmolApplet0'], 'spin ' + (this.checked ? 'on' : 'off'));" title="enable/disable spin" /><label for="JmolSpinWidget0">Spin on</label></td><td class="widgetItemScBtn"><table><tbody><tr><td>background color:</td><td style='min-width:70px;'><script type='text/javascript'>var scriptStr = 'color background $COLOR$;';jmolColorPickerBox(scriptStr, [0,0,0], 'backbox0',  '0');</script></td></tr></tbody></table></td><td class="widgetItemScBtn"><select id="StereoMode0" title="select stereo type"onchange="void(Jmol.scriptWait(window['jmolApplet0'], (this.options[this.selectedIndex]).value));">
+<option selected="" value="stereo off">Stereo Off </option>
+<option value="stereo REDBLUE">Red/Blue</option>
+<option value="stereo REDCYAN">Red/Cyan</option>
+<option value="stereo REDGREEN">Red/Green</option>
+</select></td></tr></tbody></table>
+    </div>
+  </div>
+  
+</div>
+
+			</div>
+			
+<hr>
+<h3>II. Analyze the quality of your model using one of the structure validation or verification tools</h3>
+<p> 
+To analyze the quality of the protein model obtained using structure validation, there are many tools that can be used. PROCHECK (<a href="http://services.mbi.ucla.edu/PROCHECK/">http://services.mbi.ucla.edu/PROCHECK/</a>) is one of the tools that can be used to validate the predicted protein structure. The PDB file obtained from the Swiss-Model is uploaded and the “Run PROCHECK” button is clicked. After the process is completed, PROCHECK gives various results for the protein structure like Phi-psi and chi1-chi2 distributions, Bond lengths, Bond angles, Planar groups, Stereochemical quality plots and residue-by-residue listing. The summary (<a href="http://services.mbi.ucla.edu/PROCHECK/Jobs/8614818/model_01.sum">http://services.mbi.ucla.edu/PROCHECK/Jobs/8614818/model_01.sum</a>) and the Ramachandran plot (<a href="http://services.mbi.ucla.edu/PROCHECK/">http://services.mbi.ucla.edu/PROCHECK/</a>) for the protein structure is shown below.
+</p>
+<img src="images/pic7.png"/>
+<img src="images/pic8.png"/>
+<img src="images/pic9.png"/>
+<hr>
+<h3>III. Identify structural classification of your model.</h3>
+<p>
+The structural classification for the protein model obtained can be done by using CATH or SCOPe. A hierarchical classification of protein domains (sub-sequences of proteins that may fold, evolve and function independently of the rest of the protein) based on their folding patterns is provided by the CATH database (<a href="http://www.cathdb.info/">http://www.cathdb.info/</a>). It is a classification of protein domains based not just on sequence information, but on structural and functional properties as well, which offers proteins even with very minute sequence similarity which often are both structurally and functionally related. The PDB format of the protein obtained from the Swiss-Model is uploaded to do the classification and resulted in 34 matching domains and 10 matching functional families for the protein, of which based on high similarity and coverage (177-520) “1t1eA02” was chosen (<a href="http://www.cathdb.info/version/v4_1_0/domain/1t1eA02">http://www.cathdb.info/version/v4_1_0/domain/1t1eA02</a>) and the classification of the protein structure (<a href="http://www.cathdb.info/version/v4_1_0/superfamily/3.40.50.200">http://www.cathdb.info/version/v4_1_0/superfamily/3.40.50.200</a>) is shown below. 
+</p>
+<img src="images/pic10.png"/>
+<img src="images/pic11.png"/>
+<hr>
+<h3>IV. [FOR BINF630 AND BIOL580 STUDENTS ONLY: Compare predicted secondary structures with the secondary structures in 3D model.]</h3>
+<p>
+To compare the predicted secondary structures with the secondary structures in 3D model, various tools can be used. 
+Protein structures were aligned using the iPBA, the PDB files from Swiss-Model and the PDB file fromt eh Jpred prediction are given uploaded and the proteins were aligned (<a href="http://www.dsimb.inserm.fr/dsimb_tools/ipba/TMP/ipba.20170428061427_69758/results.html">http://www.dsimb.inserm.fr/dsimb_tools/ipba/TMP/ipba.20170428061427_69758/results.html</a>) and the summary of the alignment can be viewed here <a href="http://www.dsimb.inserm.fr/dsimb_tools/ipba/TMP/ipba.20170428061427_69758/summary">http://www.dsimb.inserm.fr/dsimb_tools/ipba/TMP/ipba.20170428061427_69758/summary</a>.
+</p>
+<img src="images/pic20.png"/><br>
+<h4>Visualisation of structural superposition</h4>
+<img src="images/pic22.png"/>
+<p><b>Comparison using PyMOL </b>(<a href="https://www.pymol.org/">https://www.pymol.org/</a>)<b>:</b></p>
+<h4><u>Predicted Protein Structure (Jpred)</u>:</h4>
+ <table border=1>
+	<tr>
+		<td>
+			<figure>
+				<img src="images/pic12.png" width="300" height="300">
+				<figcaption><b>Secondary structure of the predicted protein</b></figcaption>
+			</figure>
+		</td>
+		<td>
+			<figure>
+				<img src="images/pic13.png" width="300" height="300">
+				<figcaption><b>Complete structure of the predicted protein</b></figcaption>
+			</figure>
+		</td>
+	</tr>
+ </table>
+ <h4><u>3D Model Protein Structure (Swiss - Model)</u>:</h4>
+ <table border=1>
+	<tr>
+		<td>
+			<figure>
+				<img src="images/pic14.png" width="300" height="300">
+				<figcaption><b>Secondary structure of the 3D Model protein</b></figcaption>
+			</figure>
+		</td>
+		<td>
+			<figure>
+				<img src="images/pic15.png" width="300" height="300">
+				<figcaption><b>Complete structure of the 3D Model protein</b></figcaption>
+			</figure>
+		</td>
+	</tr>
+ </table>
+ 
+ <h4><u>Comparison of the Predicted Protein Structure and the 3D Model Protein Structure</u>:</h4>
+ <table border=1>
+	<tr>
+		<td>
+			<figure>
+				<img src="images/pic16.png" width="300" height="300">
+				<figcaption><b>Secondary structures of predicted protein (Jpred -Blue) and the 3D Model protein (Swiss-Model - Yellow)</b></figcaption>
+			</figure>
+		</td>
+		<td>
+			<figure>
+				<img src="images/pic17.png" width="300" height="300">
+				<figcaption><b>Complete structure of both the predicted protein and the 3D Model protein.</b></figcaption>
+			</figure>
+		</td>
+	</tr>
+ </table>
+
+<p>
+According to PyMOL the comparison of the secondary structures of the Jpred predicted protein and the Swiss-Model protein slightly differ, which states that the protein structure predicted both the Jpred and the Swiss-Model are of the same protein. The complete details of the predicted protein can be obtained from DSSP classification (<a href="http://mrs.cmbi.ru.nl/entry?db=pdb&nr=22344&q=1t1e">http://mrs.cmbi.ru.nl/entry?db=pdb&nr=22344&q=1t1e</a>).
+</p>			
+			
+<!--			
+      <p>You may look at any of these intermediate views again by clicking on the appropriate button.
+			</p>
+       <div id="creationdiv" class="update-info">
+       Page skeleton and JavaScript generated by the Export to Web module of  <a href="http://jmol.sourceforge.net">Jmol 14.14.1  2017-04-17 21:08</a>  on Apr 28, 2017.
+       </div>
+      <div id="authordiv" class="update-info">
+        Based on a template by A. Herr&#x00E1;ez and J. Gutow
+       </div>
+			 <p style="font-size:0.8em;">If your browser/OS combination is Java capable, you will get snappier performance if you <a href="?use=JAVA">use Java</a></p>
+
+       <div id="logdiv" style="display:none">
+         <pre>
+Using directory C:/Users/Vaishnavi/Desktop/Desktop/HW2
+  adding support.js
+  ...jmolApplet0
+      ...adding 1T1E.png
+copying and unzipping jsmol.zip directory into C:/Users/Vaishnavi/Desktop/Desktop/HW2
+      ...copying
+C:/Users/Vaishnavi/Downloads/model_01.pdb
+         to
+      ...compressing large data file to
+C:/Users/Vaishnavi/Desktop/Desktop/HW2/model_01.pdb.gz
+C:/Users/Vaishnavi/Desktop/Desktop/HW2/model_01.pdb.gz
+      ...adding 1T1E.spt
+  adding JmolColorPicker.js
+
+</pre>
+
+       </div> 
+--> 	   
+    </div>
+  </div>
+	<div id="Viewer_and_Widgets" class="JmolPane">
+		<div id="Jmol" class="JmolViewerPane">This will be the viewer
+			 <img src="1T1E.png" alt="still of jmol image" style="height:100%; width:100%"/>
+		</div>
+		<div id="JmolWidgets" class="JmolWidgetPane">
+			<div id="JmolCntl"></div>
+		</div>
+	</div>
+<script type="text/javascript">
+fixScriptButtonWidgets(1);
+</script>
+</body>
+</html>
